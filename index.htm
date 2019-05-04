@@ -380,8 +380,14 @@
                     Start();
                 }
                 if(pageToHide=="game_page"){
+                       //handles interval, life and isBonusEaten
+                    initiateValuesForANewGame();
+                    life = 3;
+                    //update monsters and bonus values
+                    initiateNonstersAndBonusValues();
                     var x = document.getElementById("song");
                     x.pause(); 
+                    
                 }
             }
             
