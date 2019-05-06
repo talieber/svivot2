@@ -22,7 +22,8 @@
         <div id = "welcome_page" class= "Page">
                 
             <ul class="menu">
-                        <li style="font-family: Impact, Charcoal, sans-serif; font-size:20pt; color: black " > <img src= "PacMan.png" align = "center" width="40" height="40" >    
+                        <li style="font-family: Impact, Charcoal, sans-serif; font-size:20pt; color: black " >
+                            <img src= "PacMan.png" align = "center" width="40" height="40" >    
                             PACMAN </li>
                         <li ><a class="active" href="#about" onclick="openDialog()">About</a></li>
                         <li><a href="#welcome">Welcom</a></li>
@@ -30,7 +31,7 @@
                         <li><a herf="#login" onclick="openPage('logIn_page','welcome_page')">LogIn</a></li>
                       </ul>
                       <br/>
-                      <img src= "pacman-dribbble.gif" align = "right" >
+                      <img src= "pacman-dribbble.gif" width="900" height="520" align = "right" >
                       <button style="margin-left:120px;" class="welcomeButton" type = "button"  onclick="openPage('registration_page', 'welcome_page')" align = "left">
                               Registration
             </button>
@@ -39,7 +40,7 @@
                     Log in
             </button>
         
-            <footer style="position:relative;" >
+            <footer  style="position:relative;">
                     <p>Created by: Yafit and Tal<br/>Contact information: liebert@post.bgu.ac.il & yafitzo@post.bgu.ac.il.</p>
             </footer>
         </div>
@@ -54,7 +55,7 @@
                         <li><a herf="#register">Registration</a></li>
                         <li><a herf="#login" onclick="openPage('logIn_page','registration_page')">LogIn</a></li>
                 </ul>
-                <img src= "pacman-dribbble.gif" align = "right" width="300" height="300" >    
+                <img src= "pacman-dribbble.gif" align = "right" width="480" height="400" class="center">    
 
                 <h1 align="center">
                         Registration!
@@ -112,8 +113,9 @@
                             <li><a href="#welcome" onclick="openPage('welcome_page','logIn_page')">Welcom</a></li>
                             <li><a herf="#register"onclick="openPage('registration_page','logIn_page')">Registration</a></li>
                             <li><a herf="#login" >LogIn</a></li>
-                          </ul>       
-                               <img src= "pacman-dribbble.gif" align = "right" >  
+                          </ul> 
+                          <br>      
+                          <img src= "pacman-dribbble.gif" width="900" height="520" align = "right" >
                                
                     <form id="login_detailes">
             
@@ -123,8 +125,14 @@
                                         <td><input type="text" name = "inputUsernameLogin"></td>
                                 </tr>
                                 <tr>
+
+                                </tr>
+                                <tr>
                                         <td>Password: </td>
                                         <td><input type="text" name = "inputPasswordLogin"></td>
+                                </tr>
+                                 <tr>
+                                    
                                 </tr>
                                 <tr >
                                         <td align = "center"><button type = "button" onclick="validateLogin('settings_page', 'logIn_page')">
@@ -240,17 +248,14 @@
                     <td>  LIFE:
                             <input id="lblLife" type="text"/>
                     </td>
-                </tr>
-                <tr>
                     <td>
-                            Pacman name:
-                            <input id="lblName" type="text"/>
-                    </td>
-                    <td>
-                        <input id="newGame" type="button" onclick="newGame()" value="newGame!" align="right"/>
+                        Pacman name:
+                        <input id="lblName" type="text"/>
+                </td>
+                <td>
+                    <input id="newGame" type="button" onclick="newGame()" value="newGame!" align="right"/>
 
-                    </td>
-
+                </td>
                 </tr>
             </table>
             <br/>
@@ -258,14 +263,13 @@
                     <source src="Pacman_music.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
             </audio>
-            <canvas id="canvas" height="600" width="1400"></canvas>
+            <canvas id="canvas" height="478" width="1200"></canvas>
             <img id = "monster1" width="60" height="60" src = "monster1.gif" style="display: none">
             <img id = "monster2" width="60" height="60" src = "monster2.jpg" style="display: none">
             <img id = "monster3" width="60" height="60" src = "monster3.gif" style="display: none">
             <img id = "bonus" width="60" height="60" src = "bonus.jpeg" style="display: none">
             <img id = "clock" width="60" height="60" src = "clock.jpg" style="display: none">
             <img id = "pill" width="60" height="60" src = "pill.jpg" style="display: none">      
-        
             <footer style="position:relative;" >
                     <p>Created by: Yafit and Tal<br/>Contact information: liebert@post.bgu.ac.il & yafitzo@post.bgu.ac.il.</p>
             </footer>
@@ -705,32 +709,32 @@
                 for (var i = 0; i < 21; i++) {
                     for (var j = 0; j < 11; j++) {
                         var center = new Object();
-                        center.x = i * 50 + 25;
-                        center.y = j * 50 + 25;
+                        center.x = i * 44 + 22;
+                        center.y = j * 44 + 22;
                         if (board[i][j] === 2) {
                             context.beginPath();
-                            context.arc(center.x, center.y, 25, pacmanSide1 * Math.PI, pacmanSide2 * Math.PI); // half circle
+                            context.arc(center.x, center.y, 22, pacmanSide1 * Math.PI, pacmanSide2 * Math.PI); // half circle
                             context.lineTo(center.x, center.y);
                             context.fillStyle = pac_color; //color
                             context.fill();
                             if (pacmanSide3 != 0 && pacmanSide4 != 0){
-                                context.arc(center.x, center.y, 25, pacmanSide3 * Math.PI, pacmanSide4 * Math.PI); // half circle
+                                context.arc(center.x, center.y, 22, pacmanSide3 * Math.PI, pacmanSide4 * Math.PI); // half circle
                                 context.lineTo(center.x, center.y);
                                 context.fillStyle = pac_color; //color
                                 context.fill();
                             }
                             context.beginPath();
-                            context.arc(center.x + pacmanEyeShiftx, center.y + pacmanEyeShifty, 5, 0, 2 * Math.PI); // circle
+                            context.arc(center.x + pacmanEyeShiftx, center.y + pacmanEyeShifty, 4, 0, 2 * Math.PI); // circle
                             context.fillStyle = "black"; //color
                             context.fill();
                         } else if (board[i][j] === 5) {
                             context.beginPath();
-                            context.arc(center.x, center.y, 15, 0, 2 * Math.PI); // circle
+                            context.arc(center.x, center.y, 9, 0, 2 * Math.PI); // circle
                             context.fillStyle = firstColor; //color
                             context.fill();
                         }else if(board[i][j] === 6){
                             context.beginPath();
-                            context.arc(center.x, center.y, 15, 0, 2 * Math.PI); // circle
+                            context.arc(center.x, center.y, 12, 0, 2 * Math.PI); // circle
                             context.fillStyle = secondColor; //color
                             context.fill();
                         }else if(board[i][j] === 7){
@@ -740,28 +744,28 @@
                             context.fill();
                         }else if (board[i][j] === 4) {
                             context.beginPath();
-                            context.rect(center.x - 25, center.y - 25, 50, 50);
+                            context.rect(center.x - 22, center.y - 22, 44, 44);
                             context.fillStyle = "grey"; //color
                             context.fill();
                         }
                     }
                 }
                 
-                context.drawImage(monster1, posIMonster1*50, posJMonster1*50, 50, 50);
+                context.drawImage(monster1, posIMonster1*44, posJMonster1*44, 44, 44);
                 if (numOfMonsters > 1){
-                    context.drawImage(monster2, posIMonster2*50, posJMonster2*50, 50, 50);
+                    context.drawImage(monster2, posIMonster2*44, posJMonster2*44, 44, 44);
                 }
                 if (numOfMonsters > 2){
-                    context.drawImage(monster3, posIMonster3*50, posJMonster3*50, 50, 50);
+                    context.drawImage(monster3, posIMonster3*44, posJMonster3*44, 44, 44);
                 }
                 if (!(shape.i === posIBonus && shape.j=== posJBonus) && !isBonusEaten){
-                    context.drawImage(bonus, posIBonus*50, posJBonus*50, 50, 50);
+                    context.drawImage(bonus, posIBonus*44, posJBonus*44, 44, 44);
                 }
                 if (!(shape.i === posIClock && shape.j=== posJClock) && !isClockEaten){
-                    context.drawImage(clock, posIClock*50, posJClock*50, 50, 50);
+                    context.drawImage(clock, posIClock*44, posJClock*44, 44, 44);
                 }
                 if (!(shape.i === posIPill && shape.j=== posJPill) && !isPillEaten){
-                    context.drawImage(pill, posIPill*50, posJPill*50, 50, 50);
+                    context.drawImage(pill, posIPill*44, posJPill*44, 44, 44);
                 }
             }
 
